@@ -1,0 +1,63 @@
+body { text-align: center;
+    background-image:url("https://kungsbiljarden.se/wp-content/uploads/2021/09/Letar-du-efter-basta-After-Work-i-Stockholm.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+fieldset { display: inline-block; }
+
+.digit {
+    background: black;
+    color: white;
+    border: 2px solid grey;
+    font-family: sans-serif;
+    font-size: 4em;
+    text-align: left;
+    padding: 0.12em 0 .05em .5em;
+  
+    display: inline-block;
+    position: relative;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+}
+
+.digit::before {
+    content: "0 1 2 3 4 5 6 7 8 9 0";
+    position: absolute;
+    line-height: 1em;
+    transition: margin .5s cubic-bezier(.5, 0, 1, .5);
+}
+
+.d0.digit::before { margin-top: 0; }
+.d1.digit::before { margin-top: -1em; }
+.d2.digit::before { margin-top: -2em; }
+.d3.digit::before { margin-top: -3em; }
+.d4.digit::before { margin-top: -4em; }
+.d5.digit::before { margin-top: -5em; }
+.d6.digit::before { margin-top: -6em; }
+.d7.digit::before { margin-top: -7em; }
+.d8.digit::before { margin-top: -8em; }
+.d9.digit::before { margin-top: -9em; }
+.d10.digit::before {
+    margin-top: -10em;
+    transition-duration: 0s;
+}
+
+.spinto.digit::before {
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(.4, 0, .7, 1.3);
+}
+
+#cover {
+  position: absolute;
+  z-index: 99999;
+  pointer-events: none;
+  overflow-x: auto;
+  top: 8%;
+  left: 36%;
+  bottom: 0;
+  right: 0;
+  height:600px;
+  width:720px;
+  display:none;
+}
